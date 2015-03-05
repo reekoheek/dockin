@@ -1,0 +1,10 @@
+{
+    "name": "reekoheek/dockin",
+    "profile": "docker",
+    "run": {
+        "build": ["docker", "build", "-t", "dockin", "."],
+        "run": ["docker", "run", "-ti", "--privileged", "--name", "dockin",
+            "-e", "DOCKER_DAEMON_ARGS=--registry-mirror=\"http://192.168.1.10:5000\"", "dockin"],
+        "shell": ["docker", "exec", "-ti", "dockin", "bash"]
+    }
+}
